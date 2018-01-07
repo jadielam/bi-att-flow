@@ -23,3 +23,6 @@ unzip $GLOVE_DIR/glove.6B.zip -d $GLOVE_DIR
 # Download NLTK (for tokenizer)
 # Make sure that nltk is installed!
 python3 -m nltk.downloader -d $HOME/nltk_data punkt
+
+# Download pretrained models
+wget https://worksheets.codalab.org/rest/bundles/0xbe46c9b116fa443fb5cb743ab9fa4104/contents/blob/
