@@ -7,7 +7,7 @@
 # --env AWS_DEFAULT_REGION=us-east-1 \
 # -p 8888:8888 -t qa
 
-FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
 
 # Installing dependencies for python packages
 RUN apt-get update -y && apt-get -y install \
@@ -39,6 +39,8 @@ EXPOSE 8888
 RUN ["/bin/bash", "-c", "chmod +x download.sh; ./download.sh"]
 RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 RUN mkdir src/model
+
+# Configure aws with your access key
 RUN ["aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ /src/model/"]
 RUN ["tar -xzvf /src/model/save.tar.gz"]
 
