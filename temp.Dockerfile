@@ -4,7 +4,7 @@
 # To run:
 # nvidia-docker run -v /home/ubuntu/deep_learning_image/examples/classification:/examples/classification -t training
 
-FROM nvidia/cuda:7.0-cudnn5-devel-ubuntu16.04
+FROM nvidia/cuda:7.0-cudnn5-runtime-ubuntu16.04
 
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
