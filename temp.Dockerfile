@@ -24,10 +24,10 @@ ARG python_version=3.5.2
 RUN conda install -y python=${python_version} && \
     pip install --upgrade pip && \
     pip install tensorflow-gpu==0.12 && \
-    conda install Pillow scikit-learn notebook easydict pandas matplotlib mkl nose pyyaml six h5py && \
+    conda install Pillow scikit-learn notebook pandas matplotlib mkl nose pyyaml six h5py && \
     conda install jinja2 tqdm theano pygpu bcolz imageio flask opencv && \
     pip install sklearn_pandas && \
-    pip install xgboost && \
+    pip install xgboost easydict && \
     pip install keras==2.1.3 && \
     conda clean -yt
 
