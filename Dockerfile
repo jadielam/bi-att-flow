@@ -1,11 +1,8 @@
 # To Build:
-# docker build -t qa .
+# docker build --build-arg aws_access_key=var_value --build-arg aws_secret_access_key=var_value --build-arg aws_default_region=var_value -t qa .
 
 # To run:
-# nvidia-docker run --env AWS_ACCESS_KEY=<<YOUR_ACCESS_KEY>> \
-# --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
-# --env AWS_DEFAULT_REGION=us-east-1 \
-# -p 8888:8888 -t qa
+# nvidia-docker run -t qa
 
 FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
 
@@ -41,6 +38,12 @@ RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 RUN mkdir src/model
 
 # Configure aws with your access key
+ARG aws_access_key
+ARG aws_secret_access_key
+ARG aws_default_region
+ENV AWS_ACCESS_KEY=${aws_access_key}
+ENV AWS_SECRET_ACCESS_KEY=${aws_secret_access_key}
+ENV AWS_DEFAULT_REGION=${aws_default_region}
 RUN ["aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ /src/model/"]
 RUN ["tar -xzvf /src/model/save.tar.gz"]
 
