@@ -4,7 +4,7 @@
 # To run:
 # nvidia-docker run -v /home/ubuntu/deep_learning_image/examples/classification:/examples/classification -t training
 
-FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
 
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
@@ -17,11 +17,6 @@ RUN mkdir -p $CONDA_DIR && \
     echo "c59b3dd3cad550ac7596e0d599b91e75d88826db132e4146030ef471bb434e9a *Miniconda3-4.2.12-Linux-x86_64.sh" | sha256sum -c - && \
     /bin/bash /Miniconda3-4.2.12-Linux-x86_64.sh -f -b -p $CONDA_DIR && \
     rm Miniconda3-4.2.12-Linux-x86_64.sh
-
-RUN mkdir -p $CONDA_DIR && \
-    mkdir -p /src && \
-    mkdir -p /examples && \
-    mkdir -p /examples/classification
 
 # Python
 ARG python_version=3.5.2
