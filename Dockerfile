@@ -49,7 +49,9 @@ RUN tar -xzvf save.tar.gz
 
 RUN ["/bin/bash", "-c", "chmod +x /src/qa/download.sh"]
 RUN /src/qa/download.sh
-RUN ["/bin/bash", "-c", "python -m squad.prepro"]
+#RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 
 # Running python as entry point
 ENTRYPOINT ["/bin/bash"]
+
+#FileNotFoundError: [Errno 2] No such file or directory: '/root/data/glove/glove.6B.100d.txt'
