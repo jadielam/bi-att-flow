@@ -288,7 +288,7 @@ def get_squad_data_filter(config):
 
 
 def update_config(config, data_sets):
-    """
+    
     config.max_num_sents = 0
     config.max_sent_size = 0
     config.max_ques_size = 0
@@ -315,7 +315,7 @@ def update_config(config, data_sets):
         config.max_para_size = min(config.max_para_size, config.para_size_th)
 
     config.max_word_size = min(config.max_word_size, config.word_size_th)
-    """
+    
     config.char_vocab_size = len(data_sets[0].shared['char2idx'])
     config.word_emb_size = len(next(iter(data_sets[0].shared['word2vec'].values())))
     config.word_vocab_size = len(data_sets[0].shared['word2idx'])
