@@ -4,7 +4,7 @@
 # To run:
 # nvidia-docker run -t qa
 
-FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
+FROM nvidia/cuda:7.0-cudnn5-runtime-ubuntu16.04
 
 # Installing dependencies for python packages
 RUN apt-get update -y && apt-get -y install \
