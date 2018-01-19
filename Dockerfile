@@ -34,7 +34,6 @@ RUN conda install -y python=${python_version} && \
 # Creating src folder
 RUN mkdir src
 ADD code/ src/qa
-WORKDIR src/qa
 ENV PYTHONPATH=:/src/qa
 EXPOSE 8888
 
