@@ -39,7 +39,7 @@ EXPOSE 8888
 
 # Download models
 RUN mkdir src/model
-RUN conda install awscli
+RUN pip install awscli
 ARG aws_access_key
 ARG aws_secret_access_key
 ARG aws_default_region
