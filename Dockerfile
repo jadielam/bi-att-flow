@@ -44,10 +44,10 @@ ARG aws_access_key
 ARG aws_secret_access_key
 ARG aws_default_region
 RUN AWS_ACCESS_KEY_ID=${aws_access_key} AWS_SECRET_ACCESS_KEY=${aws_secret_access_key} AWS_DEFAULT_REGION=${aws_default_region} aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ src/model/
-#RUN ["tar -xzvf src/model/save.tar.gz"]
+RUN tar -xzvf src/model/save.tar.gz
 
-#RUN ["/bin/bash", "-c", "chmod +x download.sh"]
-#RUN "./download.sh"
+RUN ["/bin/bash", "-c", "chmod +x download.sh"
+RUN "./download.sh"
 #RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 
 # Running python as entry point
