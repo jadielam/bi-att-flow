@@ -38,6 +38,7 @@ ENV PYTHONPATH=:/src/qa
 EXPOSE 8888
 
 # Download models
+RUN apt-get install unzip
 RUN mkdir src/model
 RUN pip install awscli
 ARG aws_access_key
@@ -46,10 +47,9 @@ ARG aws_default_region
 RUN AWS_ACCESS_KEY_ID=${aws_access_key} AWS_SECRET_ACCESS_KEY=${aws_secret_access_key} AWS_DEFAULT_REGION=${aws_default_region} aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ src/model/
 WORKDIR src/model
 RUN tar -xzvf save.tar.gz
-
 RUN ["/bin/bash", "-c", "chmod +x /src/qa/download.sh"]
 RUN /src/qa/download.sh
-#RUN ["/bin/bash", "-c", "python -m squad.prepro"]
+RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 
 # Running python as entry point
 ENTRYPOINT ["/bin/bash"]
