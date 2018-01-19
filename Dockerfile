@@ -45,7 +45,7 @@ ARG aws_default_region
 ENV AWS_ACCESS_KEY=${aws_access_key}
 ENV AWS_SECRET_ACCESS_KEY=${aws_secret_access_key}
 ENV AWS_DEFAULT_REGION=${aws_default_region}
-RUN ["aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ /src/model/"]
+RUN ["aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ src/model/"]
 RUN ["tar -xzvf /src/model/save.tar.gz"]
 
 RUN ["/bin/bash", "-c", "chmod +x download.sh"]
