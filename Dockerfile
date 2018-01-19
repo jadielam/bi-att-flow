@@ -47,7 +47,7 @@ RUN AWS_ACCESS_KEY_ID=${aws_access_key} AWS_SECRET_ACCESS_KEY=${aws_secret_acces
 RUN tar -xzvf src/model/save.tar.gz
 
 RUN ["/bin/bash", "-c", "chmod +x src/qa/download.sh"]
-RUN ./download.sh
+RUN src/qa/download.sh
 #RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 
 # Running python as entry point
