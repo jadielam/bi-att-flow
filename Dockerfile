@@ -27,7 +27,7 @@ RUN conda install -y python=${python_version} && \
     conda install Pillow scikit-learn notebook pandas matplotlib mkl nose pyyaml six h5py && \
     conda install jinja2 tqdm theano pygpu bcolz imageio flask opencv && \
     pip install sklearn_pandas && \
-    pip install xgboost easydict && \
+    pip install xgboost easydict nltk && \
     pip install keras==2.1.3 && \
     conda clean -yt
 
