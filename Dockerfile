@@ -33,7 +33,8 @@ ENV PYTHONPATH=:/src/qa
 EXPOSE 8888
 
 # Download
-RUN ["/bin/bash", "-c", "chmod +x download.sh; ./download.sh"]
+RUN ["/bin/bash", "-c", "chmod +x download.sh"]
+RUN "./download.sh"
 RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 RUN mkdir src/model
 
