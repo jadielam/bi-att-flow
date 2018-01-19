@@ -15,6 +15,7 @@
 - nltk (NLP tools, verified on 3.2.1)
 - tqdm (progress bar, verified on 4.7.4)
 - jinja2 (for visaulization; if you only train and test, not needed)
+- flask
 
 ## 1. Pre-processing
 First, prepare data. Donwload SQuAD data and GloVe and nltk corpus
@@ -99,6 +100,14 @@ If you are unfamiliar with CodaLab, follow these simple steps (given that you me
   ```
   If you want to run on GPU, you should run the script sequentially by removing '&' in the forloop, or you will need to specify different GPUs for each run of the for loop.
 
+## 4. Run demo
+For demo, run:
+```
+python run-demo.py
+```
+Then you can see demo webpage on localhost:1995
+
+
 ## Results
 
 ### Dev Data
@@ -158,6 +167,10 @@ For now, please refer to the `demo` branch of this repository.
 [squad]: http://stanford-qa.com
 [paper]: https://arxiv.org/abs/1611.01603
 [worksheet]: https://worksheets.codalab.org/worksheets/0x37a9b8c44f6845c28866267ef941c89d/
+<<<<<<< HEAD
 [minjoon]: https://seominjoon.github.io
 [minjoon-github]: https://github.com/seominjoon
 [dev]: https://github.com/allenai/bi-att-flow/tree/dev
+=======
+[demo]: https://allenai.github.io/bi-att-flow/demo
+>>>>>>> 78fc5853722b2449507388ba63d06b8b33a48cf8
