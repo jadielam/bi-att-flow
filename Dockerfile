@@ -48,7 +48,7 @@ RUN tar -xzvf src/model/save.tar.gz
 
 RUN ["/bin/bash", "-c", "chmod +x src/qa/download.sh"]
 RUN src/qa/download.sh
-RUN ["/bin/bash", "-c", "python -m squad.prepro"]
+#RUN ["/bin/bash", "-c", "python -m squad.prepro"]
 
 # Running python as entry point
 ENTRYPOINT ["/bin/bash"]
