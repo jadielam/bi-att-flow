@@ -55,5 +55,4 @@ RUN ["aws s3 sync s3://jadiel-deep-learning/models/bi-att-flow/ /src/model/"]
 RUN ["tar -xzvf /src/model/save.tar.gz"]
 
 # Running python as entry point
-ENTRYPOINT ["/bin/bash", "-c", "source activate qa && python"]
-#ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
